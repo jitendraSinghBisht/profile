@@ -1,5 +1,13 @@
-export const content = ['./src/**/*.{js,ts,jsx,tsx}'];
-export const theme = {
-  extend: {},
+import { vitePreprocess } from '@tailwindcss/vite';
+
+module.exports = {
+  darkMode: 'class',
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    vitePreprocess(),
+  ],
 };
-export const plugins = [require('@tailwindcss/typography')];
