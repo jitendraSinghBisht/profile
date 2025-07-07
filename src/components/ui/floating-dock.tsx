@@ -16,7 +16,7 @@ export const FloatingDock = ({
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; onClick?: (() => void) | null; active?: boolean }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -32,7 +32,7 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; onClick?: (() => void) | null; active?: boolean }[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
@@ -64,7 +64,13 @@ const FloatingDockMobile = ({
                 <a
                   href={item.href}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 border border-gray-800"
+                  onClick={(e) => {
+                    if (item.onClick) {
+                      e.preventDefault();
+                      item.onClick();
+                    }
+                  }}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </a>
@@ -75,9 +81,9 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 border border-gray-800"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className="h-5 w-5 text-gray-400" />
       </button>
     </div>
   );
@@ -87,7 +93,7 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; href: string; onClick?: (() => void) | null; active?: boolean }[];
   className?: string;
 }) => {
   let mouseY = useMotionValue(Infinity);
@@ -96,7 +102,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseY.set(e.pageY)}
       onMouseLeave={() => mouseY.set(Infinity)}
       className={cn(
-        "my-auto hidden w-16 items-start gap-4 rounded-2xl bg-gray-50 py-4 pl-3 md:flex md:flex-col dark:bg-neutral-900",
+        "my-auto hidden w-16 items-start gap-4 rounded-2xl bg-gray-900 py-4 pl-3 md:flex md:flex-col border border-gray-800",
         className,
       )}
     >
@@ -112,11 +118,15 @@ function IconContainer({
   title,
   icon,
   href,
+  onClick,
+  active,
 }: {
   mouseY: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
+  onClick?: (() => void) | null;
+  active?: boolean;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
@@ -161,13 +171,22 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <a 
+      href={href}
+      onClick={(e) => {
+        if (onClick) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className={`relative flex aspect-square items-center justify-center rounded-full border border-gray-700 transition-colors
+          ${active ? 'bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg' : 'bg-gray-800 hover:bg-gray-700'}`}
       >
         <AnimatePresence>
           {hovered && (
@@ -175,7 +194,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute left-[150%] w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="absolute left-[150%] w-fit rounded-md border border-gray-700 bg-gray-900 px-2 py-0.5 text-xs whitespace-pre text-white"
             >
               {title}
             </motion.div>
@@ -183,11 +202,11 @@ function IconContainer({
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center"
+          className={`flex items-center justify-center ${active ? 'text-white' : ''}`}
         >
           {icon}
         </motion.div>
       </motion.div>
     </a>
   );
-};
+}
