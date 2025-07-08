@@ -29,9 +29,9 @@ export default function App() {
   };
 
   return (
-    <div className="w-full h-full bg-black flex overflow-hidden">
+    <div className="w-full h-full min-h-screen flex overflow-hidden bg-white text-gray-900">
       <Sidebar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <div className="flex-1 overflow-y-auto pl-24 md:pl-28 lg:pl-32" style={{ scrollbarWidth: 'none' }}>
+      <div className="flex-1 overflow-y-auto pl-20 md:pl-24 lg:pl-28" style={{ scrollbarWidth: 'none' }}>
         {renderPage()}
       </div>
     </div>

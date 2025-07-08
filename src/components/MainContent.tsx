@@ -1,177 +1,310 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaArrowRight } from 'react-icons/fa';
 import { HiCode, HiServer, HiCloud, HiDatabase } from 'react-icons/hi';
 
 export default function MainContent() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
   return (
-    <main className="flex-1 h-full bg-black text-white relative">
-      {/* Fixed Header */}
-      <motion.div 
-        className="fixed top-0 left-0 w-full z-20 bg-black pt-8 pb-6 px-8"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-          Welcome to My Portfolio
-        </h1>
-        <p className="text-xl text-gray-300">
-          Backend Engineer & Cloud Architect
-        </p>
-      </motion.div>
-      {/* Scrollable Content */}
-      <div className="pt-36 pb-8 px-0 overflow-y-auto h-full hide-scrollbar">
-        {/* Hero Section */}
-        <motion.section 
-          className="mb-16"
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-        >
-          <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
-            <motion.div 
-              className="flex items-center gap-4 mb-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-2xl">👋</span>
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-white">Hey there!</h2>
-                <p className="text-gray-300">I'm passionate about building scalable systems</p>
-              </div>
-            </motion.div>
-            
-            <motion.p 
-              className="text-lg text-gray-300 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              I specialize in crafting robust backend architectures, optimizing cloud infrastructure, 
-              and building systems that scale. When I'm not coding, you'll find me exploring new 
-              technologies or contributing to open-source projects.
-            </motion.p>
-
-            {/* Social Links */}
-            <motion.div 
-              className="flex gap-4 mt-6"
+    <main className="flex-1 h-full bg-white text-gray-900 relative">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center px-8 py-20">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.h1 
+              className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <a href="https://github.com/jitendraSinghBisht" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                <FaGithub className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                <FaTwitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                <FaEnvelope className="w-5 h-5" />
-              </a>
-            </motion.div>
-          </div>
-        </motion.section>
+              Jitendra Singh Bisht
+            </motion.h1>
+            <motion.p 
+              className="text-2xl md:text-3xl text-gray-600 mb-8 font-light"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Backend Engineer & Cloud Architect
+            </motion.p>
+            <motion.p 
+              className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              I craft robust backend architectures and scalable cloud solutions. 
+              Passionate about building systems that perform at scale.
+            </motion.p>
+          </motion.div>
 
-        {/* Quick Overview */}
-        <motion.section 
-          className="mb-16"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.h2 
-            className="text-3xl font-bold mb-8 text-white"
-            variants={fadeInUp}
+          {/* CTA Buttons */}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
-            What I Do
-          </motion.h2>
+            <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group">
+              View My Work
+              <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+            <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-all duration-200">
+              Get In Touch
+            </button>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div 
+            className="flex justify-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <a href="https://github.com/jitendraSinghBisht" target="_blank" rel="noopener noreferrer" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <FaGithub className="w-6 h-6" />
+            </a>
+            <a href="#" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <FaLinkedin className="w-6 h-6" />
+            </a>
+            <a href="#" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <FaTwitter className="w-6 h-6" />
+            </a>
+            <a href="#" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <FaEnvelope className="w-6 h-6" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.7, 
+              ease: [0.4, 0, 0.2, 1] // cubic-bezier for smoothness
+            }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold mb-6 text-gray-900"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+              viewport={{ once: true }}
+            >
+              What I Do
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+              viewport={{ once: true }}
+            >
+              I specialize in building scalable backend systems and cloud infrastructure that power modern applications.
+            </motion.p>
+          </motion.div>
           
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <motion.div
+            className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.10, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <motion.div 
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-colors"
-              variants={fadeInUp}
-              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7, 
+                ease: [0.4, 0, 0.2, 1] // cubic-bezier for smoothness
+              }}
+              viewport={{ once: true }}
+              whileHover={{ boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
             >
-              <HiServer className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Backend Development</h3>
-              <p className="text-gray-400">Building scalable APIs and server-side applications</p>
+              <motion.div
+                className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors duration-300"
+                initial={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <HiServer className="w-8 h-8 text-gray-700" />
+              </motion.div>
+              <motion.h3
+                className="text-xl font-semibold text-gray-900 mb-3"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Backend Development
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Building scalable APIs and server-side applications with modern frameworks and best practices.
+              </motion.p>
             </motion.div>
 
             <motion.div 
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-purple-500 transition-colors"
-              variants={fadeInUp}
-              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7, 
+                ease: [0.4, 0, 0.2, 1] // cubic-bezier for smoothness
+              }}
+              viewport={{ once: true }}
+              whileHover={{ boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
             >
-              <HiCloud className="w-12 h-12 text-purple-400 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Cloud Architecture</h3>
-              <p className="text-gray-400">Designing and deploying cloud infrastructure</p>
+              <motion.div
+                className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors duration-300"
+                initial={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <HiCloud className="w-8 h-8 text-gray-700" />
+              </motion.div>
+              <motion.h3
+                className="text-xl font-semibold text-gray-900 mb-3"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Cloud Architecture
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Designing and deploying cloud infrastructure that scales with your business needs.
+              </motion.p>
             </motion.div>
 
             <motion.div 
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-green-500 transition-colors"
-              variants={fadeInUp}
-              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7, 
+                ease: [0.4, 0, 0.2, 1] // cubic-bezier for smoothness
+              }}
+              viewport={{ once: true }}
+              whileHover={{ boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
             >
-              <HiCode className="w-12 h-12 text-green-400 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Full-Stack Development</h3>
-              <p className="text-gray-400">Creating complete web applications</p>
+              <motion.div
+                className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors duration-300"
+                initial={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <HiCode className="w-8 h-8 text-gray-700" />
+              </motion.div>
+              <motion.h3
+                className="text-xl font-semibold text-gray-900 mb-3"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Full-Stack Development
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Creating complete web applications with modern frontend and backend technologies.
+              </motion.p>
             </motion.div>
 
             <motion.div 
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-red-500 transition-colors"
-              variants={fadeInUp}
-              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7, 
+                ease: [0.4, 0, 0.2, 1] // cubic-bezier for smoothness
+              }}
+              viewport={{ once: true }}
+              whileHover={{ boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
             >
-              <HiDatabase className="w-12 h-12 text-red-400 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Database Design</h3>
-              <p className="text-gray-400">Optimizing data storage and retrieval</p>
+              <motion.div
+                className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors duration-300"
+                initial={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <HiDatabase className="w-8 h-8 text-gray-700" />
+              </motion.div>
+              <motion.h3
+                className="text-xl font-semibold text-gray-900 mb-3"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Database Design
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                viewport={{ once: true }}
+              >
+                Optimizing data storage and retrieval for performance and scalability.
+              </motion.p>
             </motion.div>
-          </div>
-        </motion.section>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <motion.section 
-          className="mb-16"
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-white">Ready to Work Together?</h2>
-            <p className="text-blue-100 mb-6 text-lg">
+      {/* Call to Action */}
+      <section className="py-20 px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Ready to Work Together?</h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Let's discuss your next project and see how I can help bring your ideas to life.
             </p>
-            <div className="flex gap-4 justify-center">
-              <button className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group">
                 View Projects
+                <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-              <button className="px-6 py-3 border border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-all duration-200">
                 Get In Touch
               </button>
             </div>
-          </div>
-        </motion.section>
-      </div>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }
