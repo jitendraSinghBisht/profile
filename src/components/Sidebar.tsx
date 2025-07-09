@@ -1,20 +1,17 @@
 import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHome, FaUser, FaFolder, FaCode, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-type Page = 'home' | 'about' | 'projects' | 'skills' | 'contact';
+export default function Sidebar() {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-interface SidebarProps {
-  currentPage: Page;
-  setCurrentPage: (page: Page) => void;
-}
-
-export default function Sidebar({ currentPage, setCurrentPage }: SidebarProps) {
   const navItems = [
-    { id: 'home', label: 'Home', icon: FaHome },
-    { id: 'about', label: 'About', icon: FaUser },
-    { id: 'projects', label: 'Projects', icon: FaFolder },
-    { id: 'skills', label: 'Skills', icon: FaCode },
-    { id: 'contact', label: 'Contact', icon: FaEnvelope },
+    { id: 'home', path: '/', label: 'Home', icon: FaHome },
+    { id: 'about', path: '/about', label: 'About', icon: FaUser },
+    { id: 'projects', path: '/projects', label: 'Projects', icon: FaFolder },
+    { id: 'skills', path: '/skills', label: 'Skills', icon: FaCode },
+    { id: 'contact', path: '/contact', label: 'Contact', icon: FaEnvelope },
   ];
 
   const socialLinks = [
@@ -22,6 +19,14 @@ export default function Sidebar({ currentPage, setCurrentPage }: SidebarProps) {
     { href: '#', icon: FaLinkedin, label: 'LinkedIn' },
     { href: '#', icon: FaTwitter, label: 'Twitter' },
   ];
+
+  const getCurrentPage = () => {
+    const currentPath = location.pathname;
+    const currentItem = navItems.find(item => item.path === currentPath);
+    return currentItem?.id || 'home';
+  };
+
+  const currentPage = getCurrentPage();
 
   return (
     <motion.aside 
@@ -55,7 +60,7 @@ export default function Sidebar({ currentPage, setCurrentPage }: SidebarProps) {
           return (
             <motion.button
               key={item.id}
-              onClick={() => setCurrentPage(item.id as Page)}
+              onClick={() => navigate(item.path)}
               className={`relative group p-2.5 rounded-lg transition-all duration-200 ${
                 isActive 
                   ? 'bg-gray-900 text-white shadow-md' 
