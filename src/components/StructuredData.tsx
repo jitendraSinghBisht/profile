@@ -1,15 +1,11 @@
-import { useLocation } from 'react-router-dom';
-
 interface StructuredDataProps {
   type: 'person' | 'about' | 'projects' | 'skills' | 'contact';
 }
 
 export const StructuredData = ({ type }: StructuredDataProps) => {
-  const location = useLocation();
-  
   const getStructuredData = () => {
     const baseUrl = 'https://your-domain.com';
-    
+
     switch (type) {
       case 'person':
         return {
