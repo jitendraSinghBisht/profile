@@ -20,10 +20,10 @@ const seoConfigs: Record<string, SEOConfig> = {
     keywords: 'backend engineer, cloud architect, node.js, express, microservices, API development, cloud infrastructure, software engineer, full-stack developer',
     ogTitle: 'Jitendra Singh Bisht - Backend Engineer & Cloud Architect',
     ogDescription: 'Backend Engineer and Cloud Architect specializing in scalable APIs, microservices, and cloud infrastructure.',
-    ogImage: 'https://your-domain.com/og-home.jpg',
+    ogImage: 'https://jitendrasinghbisht.in/og-home.jpg',
     twitterTitle: 'Jitendra Singh Bisht - Backend Engineer & Cloud Architect',
     twitterDescription: 'Backend Engineer and Cloud Architect specializing in scalable APIs, microservices, and cloud infrastructure.',
-    twitterImage: 'https://your-domain.com/og-home.jpg'
+    twitterImage: 'https://jitendrasinghbisht.in/og-home.jpg'
   },
   '/about': {
     title: 'About Jitendra Singh Bisht - Backend Engineer & Developer Journey',
@@ -31,10 +31,10 @@ const seoConfigs: Record<string, SEOConfig> = {
     keywords: 'about backend developer, software engineer journey, clean code, continuous learning, backend development experience, Jitendra Singh Bisht',
     ogTitle: 'About Jitendra Singh Bisht - Backend Engineer & Developer Journey',
     ogDescription: 'Learn about Jitendra Singh Bisht, a passionate backend developer with expertise in scalable systems and clean code.',
-    ogImage: 'https://your-domain.com/og-about.jpg',
+    ogImage: 'https://jitendrasinghbisht.in/og-about.jpg',
     twitterTitle: 'About Jitendra Singh Bisht - Backend Engineer & Developer Journey',
     twitterDescription: 'Learn about Jitendra Singh Bisht, a passionate backend developer with expertise in scalable systems and clean code.',
-    twitterImage: 'https://your-domain.com/og-about.jpg'
+    twitterImage: 'https://jitendrasinghbisht.in/og-about.jpg'
   },
   '/projects': {
     title: 'Projects by Jitendra Singh Bisht - Backend & Full-Stack Development Portfolio',
@@ -42,10 +42,10 @@ const seoConfigs: Record<string, SEOConfig> = {
     keywords: 'backend projects, full-stack projects, node.js projects, react.js projects, portfolio, web development projects, API projects',
     ogTitle: 'Projects by Jitendra Singh Bisht - Backend & Full-Stack Development Portfolio',
     ogDescription: 'Explore my portfolio of backend and full-stack projects including Node.js applications, React.js projects, and interactive web development.',
-    ogImage: 'https://your-domain.com/og-projects.jpg',
+    ogImage: 'https://jitendrasinghbisht.in/og-projects.jpg',
     twitterTitle: 'Projects by Jitendra Singh Bisht - Backend & Full-Stack Development Portfolio',
     twitterDescription: 'Explore my portfolio of backend and full-stack projects including Node.js applications, React.js projects, and interactive web development.',
-    twitterImage: 'https://your-domain.com/og-projects.jpg'
+    twitterImage: 'https://jitendrasinghbisht.in/og-projects.jpg'
   },
   '/skills': {
     title: 'Skills & Expertise - Jitendra Singh Bisht | Backend Development & Cloud Technologies',
@@ -53,10 +53,10 @@ const seoConfigs: Record<string, SEOConfig> = {
     keywords: 'backend skills, JavaScript, TypeScript, Node.js, React.js, MongoDB, PostgreSQL, AWS, cloud deployment, technical skills, programming languages',
     ogTitle: 'Skills & Expertise - Jitendra Singh Bisht | Backend Development & Cloud Technologies',
     ogDescription: 'Comprehensive overview of my technical skills including JavaScript, TypeScript, Node.js, React.js, MongoDB, PostgreSQL, AWS, and cloud deployment expertise.',
-    ogImage: 'https://your-domain.com/og-skills.jpg',
+    ogImage: 'https://jitendrasinghbisht.in/og-skills.jpg',
     twitterTitle: 'Skills & Expertise - Jitendra Singh Bisht | Backend Development & Cloud Technologies',
     twitterDescription: 'Comprehensive overview of my technical skills including JavaScript, TypeScript, Node.js, React.js, MongoDB, PostgreSQL, AWS, and cloud deployment expertise.',
-    twitterImage: 'https://your-domain.com/og-skills.jpg'
+    twitterImage: 'https://jitendrasinghbisht.in/og-skills.jpg'
   },
   '/contact': {
     title: 'Contact Jitendra Singh Bisht - Backend Engineer & Cloud Architect',
@@ -64,10 +64,10 @@ const seoConfigs: Record<string, SEOConfig> = {
     keywords: 'contact backend engineer, hire backend developer, cloud architect contact, software engineer contact, remote work, collaboration opportunities',
     ogTitle: 'Contact Jitendra Singh Bisht - Backend Engineer & Cloud Architect',
     ogDescription: 'Get in touch with Jitendra Singh Bisht for backend development, cloud architecture, and software engineering opportunities.',
-    ogImage: 'https://your-domain.com/og-contact.jpg',
+    ogImage: 'https://jitendrasinghbisht.in/og-contact.jpg',
     twitterTitle: 'Contact Jitendra Singh Bisht - Backend Engineer & Cloud Architect',
     twitterDescription: 'Get in touch with Jitendra Singh Bisht for backend development, cloud architecture, and software engineering opportunities.',
-    twitterImage: 'https://your-domain.com/og-contact.jpg'
+    twitterImage: 'https://jitendrasinghbisht.in/og-contact.jpg'
   }
 };
 
@@ -87,16 +87,16 @@ export const useSEO = () => {
     // Update Open Graph tags
     updateMetaTag('property', 'og:title', config.ogTitle || config.title);
     updateMetaTag('property', 'og:description', config.ogDescription || config.description);
-    updateMetaTag('property', 'og:image', config.ogImage || 'https://your-domain.com/og-default.jpg');
-    updateMetaTag('property', 'og:url', `https://your-domain.com${location.pathname}`);
+    updateMetaTag('property', 'og:image', config.ogImage || 'https://jitendrasinghbisht.in/og-default.jpg');
+    updateMetaTag('property', 'og:url', `https://jitendrasinghbisht.in${location.pathname}`);
     
     // Update Twitter Card tags
     updateMetaTag('name', 'twitter:title', config.twitterTitle || config.title);
     updateMetaTag('name', 'twitter:description', config.twitterDescription || config.description);
-    updateMetaTag('name', 'twitter:image', config.twitterImage || config.ogImage || 'https://your-domain.com/og-default.jpg');
+    updateMetaTag('name', 'twitter:image', config.twitterImage || config.ogImage || 'https://jitendrasinghbisht.in/og-default.jpg');
     
     // Update canonical URL
-    updateCanonicalUrl(`https://your-domain.com${location.pathname}`);
+    updateCanonicalUrl(`https://jitendrasinghbisht.in${location.pathname}`);
     
   }, [location.pathname]);
 };

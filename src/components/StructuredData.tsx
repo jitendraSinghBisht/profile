@@ -4,7 +4,7 @@ interface StructuredDataProps {
 
 export const StructuredData = ({ type }: StructuredDataProps) => {
   const getStructuredData = () => {
-    const baseUrl = 'https://your-domain.com';
+    const baseUrl = 'https://jitendrasinghbisht.in';
 
     switch (type) {
       case 'person':
