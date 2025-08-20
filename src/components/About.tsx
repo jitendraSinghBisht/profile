@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaBriefcase, FaHeart, FaCode, FaArrowRight } from 'react-icons/fa';
+import { FaGraduationCap, FaHeart, FaCode, FaArrowRight, FaCloud, FaServer, FaDatabase } from 'react-icons/fa';
 import { StructuredData } from './StructuredData';
 
 export default function About() {
@@ -41,8 +41,7 @@ export default function About() {
                     <p>
                       I believe in writing clean, maintainable code and staying up-to-date with 
                       the latest technologies and best practices. When I'm not coding, you'll find 
-                      me exploring new technologies, contributing to open-source projects, or 
-                      sharing knowledge with the developer community.
+                      me exploring new technologies, or learning new things.
                     </p>
                     <p>
                       My approach combines technical expertise with a strong focus on user experience 
@@ -125,24 +124,24 @@ export default function About() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-200">
                       <FaCode className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
-                      <h3 className="font-semibold text-gray-900">Open Source</h3>
+                      <h3 className="font-semibold text-gray-900">Backend Development</h3>
                     </div>
                     <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-200">
-                      <FaGraduationCap className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
-                      <h3 className="font-semibold text-gray-900">Learning</h3>
+                      <FaCloud className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
+                      <h3 className="font-semibold text-gray-900">Cloud Architecture</h3>
                     </div>
                     <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-200">
-                      <FaBriefcase className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
-                      <h3 className="font-semibold text-gray-900">Problem Solving</h3>
+                      <FaServer className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
+                      <h3 className="font-semibold text-gray-900">System Design</h3>
                     </div>
                     <div className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-200">
-                      <FaHeart className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
-                      <h3 className="font-semibold text-gray-900">Community</h3>
+                      <FaDatabase className="w-8 h-8 text-gray-700 mx-auto mb-3" aria-hidden="true" />
+                      <h3 className="font-semibold text-gray-900">Database Design</h3>
                     </div>
                   </div>
                 </article>
 
-                <article className="bg-gray-50 rounded-2xl p-8">
+                {/* <article className="bg-gray-50 rounded-2xl p-8">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Fun Facts</h2>
                   <ul className="space-y-4 text-gray-600">
                     <li className="flex items-center gap-3">
@@ -162,7 +161,7 @@ export default function About() {
                       I believe in the power of collaboration and knowledge sharing
                     </li>
                   </ul>
-                </article>
+                </article> */}
               </motion.div>
             </div>
           </div>
@@ -181,10 +180,10 @@ export default function About() {
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Let's connect and discuss how we can work together on your next project.
               </p>
-              <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group mx-auto">
+              <a href="/contact" className="px-8 py-4 bg-gray-900 w-fit text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group mx-auto">
                 Get In Touch
                 <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>

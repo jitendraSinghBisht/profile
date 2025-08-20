@@ -53,13 +53,13 @@ export default function MainContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group">
+              <a href="/projects" className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group">
                 View My Work
                 <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-all duration-200">
+              </a>
+              <a href="/contact" className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-all duration-200">
                 Get In Touch
-              </button>
+              </a>
             </motion.div>
 
             {/* Social Links */}
@@ -72,13 +72,13 @@ export default function MainContent() {
               <a href="https://github.com/jitendraSinghBisht" target="_blank" rel="noopener noreferrer" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="GitHub Profile">
                 <FaGithub className="w-6 h-6" />
               </a>
-              <a href="#" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/jitendra-singh-bisht-b27255218/" target="_blank" rel="noopener noreferrer" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="LinkedIn Profile">
                 <FaLinkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="Twitter Profile">
+              <a href="https://x.com/VijayBisht_08" target="_blank" rel="noopener noreferrer" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="X Profile">
                 <FaTwitter className="w-6 h-6" />
               </a>
-              <a href="#" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="Email Contact">
+              <a href="mailto:me@jitendrasinghbisht.in" className="p-3 text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="Email Contact">
                 <FaEnvelope className="w-6 h-6" />
               </a>
             </motion.div>
@@ -308,13 +308,13 @@ export default function MainContent() {
                 Let's discuss your next project and see how I can help bring your ideas to life.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group">
+                <a href="/projects" className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group">
                   View Projects
                   <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </button>
-                <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-all duration-200">
+                </a>
+                <a href="/contact" className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-all duration-200">
                   Get In Touch
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>

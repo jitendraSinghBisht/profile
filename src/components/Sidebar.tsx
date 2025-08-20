@@ -16,8 +16,8 @@ export default function Sidebar() {
 
   const socialLinks = [
     { href: 'https://github.com/jitendraSinghBisht', icon: FaGithub, label: 'GitHub' },
-    { href: '#', icon: FaLinkedin, label: 'LinkedIn' },
-    { href: '#', icon: FaTwitter, label: 'Twitter' },
+    { href: 'https://www.linkedin.com/in/jitendra-singh-bisht-b27255218/', icon: FaLinkedin, label: 'LinkedIn' },
+    { href: 'https://x.com/VijayBisht_08', icon: FaTwitter, label: 'X' },
   ];
 
   const getCurrentPage = () => {

@@ -132,8 +132,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                        <a href="mailto:jitendra.singh@example.com" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
-                          jitendra.singh@example.com
+                        <a href="mailto:me@jitendrasinghbisht.in" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                          me@jitendrasinghbisht.in
                         </a>
                         <p className="text-gray-500 text-sm">I'll get back to you within 24 hours</p>
                       </div>
@@ -186,7 +186,9 @@ export default function Contact() {
                     </a>
                     
                     <a 
-                      href="#"
+                      href="https://www.linkedin.com/in/jitendra-singh-bisht-b27255218/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-4 p-4 bg-white rounded-xl hover:shadow-md transition-all duration-200 group"
                       aria-label="Visit LinkedIn profile"
                     >
@@ -200,7 +202,9 @@ export default function Contact() {
                     </a>
                     
                     <a 
-                      href="#"
+                      href="https://x.com/VijayBisht_08"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-4 p-4 bg-white rounded-xl hover:shadow-md transition-all duration-200 group"
                       aria-label="Visit Twitter profile"
                     >
@@ -232,10 +236,10 @@ export default function Contact() {
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Let's work together to bring your ideas to life. I'm excited to hear about your next project.
               </p>
-              <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group mx-auto">
+              <a href="mailto:me@jitendrasinghbisht.in" className="px-8 py-4 bg-gray-900 w-fit text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group mx-auto">
                 Let's Talk
                 <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>

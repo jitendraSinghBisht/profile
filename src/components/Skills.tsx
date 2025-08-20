@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaCode, FaServer, FaDatabase, FaCloud, FaTools, FaArrowRight } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiAmazon, SiDocker, SiGit, SiHtml5, SiCss3, SiTailwindcss, SiFigma } from 'react-icons/si';
+import { Coffee, Database, Server, Code2, Globe, Award, Monitor } from 'lucide-react';
+import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiAmazon, SiDocker, SiGit, SiHtml5, SiCss3, SiTailwindcss, SiGithub, SiPython, SiGo, SiC } from 'react-icons/si';
 import { StructuredData } from './StructuredData';
 
 export default function Skills() {
@@ -10,29 +11,38 @@ export default function Skills() {
       title: "Programming Languages",
       icon: FaCode,
       skills: [
-        { name: "JavaScript", icon: SiJavascript, level: 90 },
-        { name: "TypeScript", icon: SiTypescript, level: 85 },
-        { name: "HTML", icon: SiHtml5, level: 95 },
-        { name: "CSS", icon: SiCss3, level: 90 }
+        { name: "GoLang", icon: SiGo },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "Python", icon: SiPython },
+        { name: "Java", icon: Coffee },
+        { name: "C", icon: SiC },
+        { name: "HTML/CSS", icon: SiHtml5 }
       ]
     },
     {
       id: 2,
-      title: "Frontend Development",
-      icon: FaCode,
+      title: "Backend Development",
+      icon: FaServer,
       skills: [
-        { name: "React.js", icon: SiReact, level: 88 },
-        { name: "Tailwind CSS", icon: SiTailwindcss, level: 85 },
-        { name: "Figma", icon: SiFigma, level: 75 }
+        { name: "Go", icon: SiGo },
+        { name: "Chi", icon: Server },
+        { name: "Mux", icon: Server },
+        { name: "Node.js", icon: SiNodedotjs },
+        { name: "Express.js", icon: SiExpress }
       ]
     },
     {
       id: 3,
-      title: "Backend Development",
-      icon: FaServer,
+      title: "Cloud & DevOps",
+      icon: FaCloud,
       skills: [
-        { name: "Node.js", icon: SiNodedotjs, level: 90 },
-        { name: "Express.js", icon: SiExpress, level: 88 }
+        { name: "AWS (EC2, Lambda, ALB, CodeBuild, CloudWatch)", icon: SiAmazon },
+        { name: "Docker", icon: SiDocker },
+        { name: "Linux", icon: Monitor },
+        { name: "Nginx", icon: Server },
+        { name: "Git", icon: SiGit },
+        { name: "GitHub", icon: SiGithub }
       ]
     },
     {
@@ -40,25 +50,30 @@ export default function Skills() {
       title: "Databases",
       icon: FaDatabase,
       skills: [
-        { name: "MongoDB", icon: SiMongodb, level: 85 },
-        { name: "PostgreSQL", icon: SiPostgresql, level: 80 }
+        { name: "DynamoDB", icon: Database },
+        { name: "Redis", icon: Database },
+        { name: "MongoDB", icon: SiMongodb },
+        { name: "MySQL", icon: SiPostgresql }
       ]
     },
     {
       id: 5,
-      title: "Cloud & DevOps",
-      icon: FaCloud,
+      title: "Frontend Development",
+      icon: FaCode,
       skills: [
-        { name: "AWS", icon: SiAmazon, level: 75 },
-        { name: "Docker", icon: SiDocker, level: 70 }
+        { name: "React", icon: SiReact },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "Bootstrap", icon: SiCss3 }
       ]
     },
     {
       id: 6,
-      title: "Tools & Others",
+      title: "Data Structures & Algorithms",
       icon: FaTools,
       skills: [
-        { name: "Git", icon: SiGit, level: 90 }
+        { name: "150+ Problems Solved", icon: Award },
+        { name: "LeetCode", icon: Code2 },
+        { name: "GeeksforGeeks", icon: Globe }
       ]
     }
   ];
@@ -119,16 +134,6 @@ export default function Skills() {
                                   <SkillIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
                                   <span className="text-gray-700 font-medium">{skill.name}</span>
                                 </div>
-                                <span className="text-sm text-gray-500">{skill.level}%</span>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow={skill.level} aria-valuemin={0} aria-valuemax={100}>
-                                <motion.div 
-                                  className="bg-gray-900 h-2 rounded-full"
-                                  initial={{ width: 0 }}
-                                  whileInView={{ width: `${skill.level}%` }}
-                                  transition={{ duration: 0.8, delay: skillIndex * 0.05 }}
-                                  viewport={{ once: true }}
-                                />
                               </div>
                             </div>
                           );
@@ -215,10 +220,10 @@ export default function Skills() {
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Let's discuss how my skills can help bring your project to life.
               </p>
-              <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group mx-auto">
+              <a href="/contact" className="px-8 py-4 bg-gray-900 w-fit text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 group mx-auto">
                 Get In Touch
                 <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>

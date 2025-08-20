@@ -17,8 +17,8 @@ export const StructuredData = ({ type }: StructuredDataProps) => {
           "url": baseUrl,
           "sameAs": [
             "https://github.com/jitendraSinghBisht",
-            "https://linkedin.com/in/jitendra-singh-bisht",
-            "https://twitter.com/jitendra_bisht"
+            "https://www.linkedin.com/in/jitendra-singh-bisht-b27255218/",
+            "https://x.com/VijayBisht_08"
           ],
           "knowsAbout": [
             "Backend Development",
@@ -187,7 +187,7 @@ export const StructuredData = ({ type }: StructuredDataProps) => {
             "@type": "Person",
             "name": "Jitendra Singh Bisht",
             "jobTitle": "Backend Engineer & Cloud Architect",
-            "email": "jitendra.singh@example.com",
+            "email": "me@jitendrasinghbisht.in",
             "telephone": "+1 (555) 123-4567",
             "address": {
               "@type": "PostalAddress",
@@ -196,8 +196,8 @@ export const StructuredData = ({ type }: StructuredDataProps) => {
             },
             "sameAs": [
               "https://github.com/jitendraSinghBisht",
-              "https://linkedin.com/in/jitendra-singh-bisht",
-              "https://twitter.com/jitendra_bisht"
+              "https://www.linkedin.com/in/jitendra-singh-bisht-b27255218/",
+              "https://x.com/VijayBisht_08"
             ]
           },
           "potentialAction": {
