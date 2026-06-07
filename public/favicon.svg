@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="15" fill="#0b1020"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  <g transform="translate(5 0) skewX(-9)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5">
+    <!-- V: full, both arms clearly visible -->
+    <path d="M13 14 L23 44 L33 14" stroke="#f8fafc"/>
+    <!-- J: tall stem on the right with a U-shaped bottom hook -->
+    <path d="M40 14 L40 45 C40 54 29 54 29 44" stroke="#38bdf8"/>
+  </g>
+</svg>
