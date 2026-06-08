@@ -112,6 +112,14 @@ export const seriousProjects: Project[] = [
     flagship: true,
   },
   {
+    title: 'IPO Assistant',
+    blurb: 'A Go service for tracking and assisting IPO decisions — data aggregation and a clean service layer.',
+    funBlurb: 'Helps you not lose money on IPOs. Written in Go, naturally. 📈',
+    tech: ['Go'],
+    url: 'https://github.com/jitendraSinghBisht/ipo-assistant',
+    emoji: '💹',
+  },
+  {
     title: 'Video Streaming Backend',
     blurb:
       'A scalable video-platform API in Node/Express: channel management, secure media handling, JWT-driven auth, and NoSQL aggregation pipelines tuned for low query latency.',
@@ -127,14 +135,6 @@ export const seriousProjects: Project[] = [
     tech: ['Go', 'REST'],
     url: 'https://github.com/jitendraSinghBisht/lets-blog',
     emoji: '📝',
-  },
-  {
-    title: 'IPO Assistant',
-    blurb: 'A Go service for tracking and assisting IPO decisions — data aggregation and a clean service layer.',
-    funBlurb: 'Helps you not lose money on IPOs. Written in Go, naturally. 📈',
-    tech: ['Go'],
-    url: 'https://github.com/jitendraSinghBisht/ipo-assistant',
-    emoji: '💹',
   },
   {
     title: 'Expense Sharing',
@@ -165,6 +165,14 @@ export const funProjects: Project[] = [
     emoji: '✨',
   },
   {
+    title: 'Learning React',
+    blurb: 'The repo where I learned to think in components.',
+    funBlurb: 'Where I learned that everything is a component, even my problems. ⚛️',
+    tech: ['React', 'JavaScript'],
+    url: 'https://github.com/jitendraSinghBisht/react_js',
+    emoji: '⚛️',
+  },
+  {
     title: 'First E-Commerce Site',
     blurb: 'A handcrafted storefront built early on with plain HTML & CSS.',
     funBlurb: 'My first ever storefront. Hand-coded HTML/CSS, ambition > skill. We all start somewhere. 🛒',
@@ -179,14 +187,6 @@ export const funProjects: Project[] = [
     tech: ['Python'],
     url: 'https://github.com/jitendraSinghBisht/12th_project',
     emoji: '🎓',
-  },
-  {
-    title: 'Learning React',
-    blurb: 'The repo where I learned to think in components.',
-    funBlurb: 'Where I learned that everything is a component, even my problems. ⚛️',
-    tech: ['React', 'JavaScript'],
-    url: 'https://github.com/jitendraSinghBisht/react_js',
-    emoji: '⚛️',
   },
 ];
 
