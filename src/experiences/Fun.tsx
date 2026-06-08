@@ -9,6 +9,7 @@ import {
   achievements,
 } from '../data/profile';
 import { CountUp, Reveal } from '../components/shared';
+import RacingGame from '../components/RacingGame';
 
 const marqueeWords = [
   'Go',
@@ -71,6 +72,17 @@ export default function Fun() {
             transition={{ delay: 0.3 }}
             className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
+            <motion.button
+              type="button"
+              onClick={() => document.getElementById('race')?.scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.06, rotate: -1 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ y: [0, -4, 0] }}
+              transition={{ y: { duration: 1.6, repeat: Infinity, ease: 'easeInOut' } }}
+              className="animate-gradient inline-flex items-center gap-2 rounded-full border-2 border-slate-900 bg-gradient-to-r from-pink-500 via-violet-500 to-amber-400 px-5 py-2.5 text-sm font-bold text-white shadow-[4px_4px_0_0_#0f172a]"
+            >
+              🏎️ Race me!
+            </motion.button>
             <a
               href={profile.links.github}
               target="_blank"
@@ -235,6 +247,23 @@ export default function Fun() {
               <p className="mt-2 font-bold text-slate-900">{achievements[0].title}</p>
               <p className="text-sm text-slate-700">{achievements[0].detail}</p>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Mini game */}
+      <section id="race" className="px-6 py-14 sm:px-12">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <h2 className="mb-2 text-center font-[var(--font-display)] text-4xl font-extrabold">
+              Bored? Race me 🏎️
+            </h2>
+            <p className="mb-10 text-center text-slate-600">
+              Dodge the traffic, beat your best. (Yes, I built this instead of sleeping.)
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <RacingGame />
           </Reveal>
         </div>
       </section>
