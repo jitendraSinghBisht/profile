@@ -12,12 +12,13 @@ export default function Gateway({ onPick }: { onPick: (mood: Mood) => void }) {
         <div className="animate-blob absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-amber-400/20 blur-3xl [animation-delay:-12s]" />
       </div>
 
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 py-10">
+      <div className="relative z-10 h-full w-full overflow-y-auto">
+       <div className="flex min-h-full w-full flex-col items-center justify-center px-5 py-10 sm:px-6">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-sky-300/80"
+          className="mb-3 w-full text-center font-mono text-[10px] uppercase tracking-[0.3em] text-sky-300/80 sm:text-xs sm:tracking-[0.35em]"
         >
           {profile.name}
         </motion.p>
@@ -26,7 +27,7 @@ export default function Gateway({ onPick }: { onPick: (mood: Mood) => void }) {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="text-center font-[var(--font-display)] text-4xl font-bold leading-tight sm:text-6xl"
+          className="w-full px-2 text-center font-[var(--font-display)] text-3xl font-bold leading-tight sm:text-5xl md:text-6xl"
         >
           How do you want to{' '}
           <span className="bg-gradient-to-r from-sky-400 via-fuchsia-400 to-amber-300 bg-clip-text text-transparent">
@@ -39,12 +40,12 @@ export default function Gateway({ onPick }: { onPick: (mood: Mood) => void }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-4 max-w-md text-center text-sm text-slate-400 sm:text-base"
+          className="mt-4 w-full max-w-md text-center text-sm text-slate-400 sm:text-base"
         >
           Same engineer, two vibes. Pick the journey that fits why you're here.
         </motion.p>
 
-        <div className="mt-12 grid w-full max-w-3xl gap-5 sm:grid-cols-2">
+        <div className="mt-8 grid w-full max-w-3xl grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
           <ChoiceCard
             onClick={() => onPick('serious')}
             delay={0.34}
@@ -73,10 +74,11 @@ export default function Gateway({ onPick }: { onPick: (mood: Mood) => void }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-10 text-xs text-slate-500"
+          className="mt-8 w-full text-center text-xs text-slate-500 sm:mt-10"
         >
           Don't worry — you can switch vibes anytime.
         </motion.p>
+       </div>
       </div>
     </div>
   );
@@ -112,7 +114,7 @@ function ChoiceCard({
       transition={{ duration: 0.55, delay }}
       whileHover={{ y: -6, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br ${gradient} p-7 text-left backdrop-blur-sm transition-shadow duration-300 hover:shadow-2xl ${ring}`}
+      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br ${gradient} p-6 text-left backdrop-blur-sm transition-shadow duration-300 hover:shadow-2xl sm:p-7 ${ring}`}
     >
       <div className="text-4xl transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-6">
         {emoji}
